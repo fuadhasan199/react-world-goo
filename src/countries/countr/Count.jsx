@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Count = ({country}) => { 
   // console.log(country) 
- 
+  
+
+
+  const [Visited ,setvisited]=useState(false)
   const handleBtn=() => {
-    
+    setvisited(!Visited)
   }
  
 
@@ -18,7 +21,8 @@ const Count = ({country}) => {
       <h1 className='text-xl font-light'> Country area :{country.area.area} km² /
          {country.area.area > 300000 ? "Big Country" : "Small Country"}</h1> 
       
-        <button onClick={handleBtn} className='border-green-400 border bg-green-400 p-2mt-2'>Not Visited</button>
+        <button onClick={handleBtn} className='border-green-400 border bg-green-400 p-2mt-2'>
+          {Visited ? "Visited" : "Not-visited"}</button>
 
    </div>
     </div>
